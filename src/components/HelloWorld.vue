@@ -7,7 +7,7 @@
     <input type="text" v-on:keypress.enter="addItem" v-model="addInput" placeholder="Add Item">
     <button v-on:click="addItem">Add Item</button>
     <br/>
-    <input type="text" v-on:keypress="addItem" v-model="searchInput" placeholder="Search Item">
+    <input type="text" v-model="searchInput" placeholder="Search Item">
     <ul>
       <li v-for="(item, index) in showItem" v-bind:key="index">{{ item }}</li>
     </ul>
