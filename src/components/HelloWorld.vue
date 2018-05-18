@@ -8,9 +8,12 @@
     <button v-on:click="addItem">Add Item</button>
     <br/>
     <input type="text" v-model="searchInput" placeholder="Search Item">
-    <ul>
-      <li v-for="(item, index) in showItem" v-bind:key="index">{{ item }}</li>
-    </ul>
+    <ol>
+      <li v-for="(item, index) in showItem" v-bind:key="index">
+        <button v-on:click="deleteItem(index)">X</button>
+        {{ item }}
+      </li>
+    </ol>
   </div>
 </template>
 
@@ -26,6 +29,9 @@ export default {
   methods: {
     addItem() {
       this.items.push(this.addInput)
+    },
+    deleteItem(index) {
+      this.items.splice(index, 1)
     }
   },
   computed: {
